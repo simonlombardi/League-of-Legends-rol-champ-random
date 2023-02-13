@@ -1,38 +1,56 @@
+@font-face{
+  font-family: "Lol fuente";
+  src: url("./fonts/Friz\ Quadrata\ Regular.ttf");
+}
+
+body{
+  background-image: url("https://images8.alphacoders.com/627/627080.png");
+  font-family: "Lol fuente", sans-serif;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 0;
+  
 }
 
-.App-link {
-  color: #61dafb;
+button{
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #F2E857;
+  color:black;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover{
+  color: #F2E857;
+  background-color:black;
+}
+
+.champion-img{
+  width: 450px;
+  height: 450px;
+}
+
+img:hover{
+  transform: scale(1.4);
+  transition: all 1s;
+}
+
+h1{
+  color: #F2E857;
+}
+
+.rol{
+  color:#F2AE2E;
+  font-size: 44px;
+}
+
+.champ{
+  color:#F2E857;
+  font-size: 40px;
 }
