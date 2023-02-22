@@ -25,11 +25,7 @@ function App() {
   const [champSupp, setChampSupp] = useState(null);
 
   function rolChampRandom() {
-    setChampTop(null);
-    setChampJg(null);
-    setChampMid(null);
-    setChampADC(null);
-    setChampSupp(null);
+    clear();
     const randomRol = roles[Math.floor(Math.random() * roles.length)];
     setRol(randomRol);
 
@@ -66,25 +62,29 @@ function App() {
   }
 
   function rolRandom(){
-    setChamp(null);
-    setChampTop(null);
-    setChampJg(null);
-    setChampMid(null);
-    setChampADC(null);
-    setChampSupp(null);
+    clear();
     const randomRol = roles[Math.floor(Math.random() * roles.length)];
     setRol(randomRol);
 
   }
 
   function rolFiveChamps(){
-    setChamp(null);
-    setRol(null);
+    clear();
     setChampTop(listChampsTop[Math.floor(Math.random() * listChampsTop.length)])
     setChampJg(listChampsJg[Math.floor(Math.random() * listChampsJg.length)])
     setChampMid(listChampsMid[Math.floor(Math.random() * listChampsMid.length)])
     setChampADC(listChampsADC[Math.floor(Math.random() * listChampsADC.length)])
     setChampSupp(listChampsSupp[Math.floor(Math.random() * listChampsSupp.length)])
+  }
+
+  function clear(){
+    setRol(null);
+    setChamp(null);
+    setChampTop(null);
+    setChampJg(null);
+    setChampMid(null);
+    setChampADC(null);
+    setChampSupp(null);
   }
 
   return (
@@ -93,6 +93,7 @@ function App() {
       <button className='btn-rol-champ' onClick={rolChampRandom}>ROL-CHAMP</button>
       <button className='btn-rol' onClick={rolRandom}>ROL</button>
       <button className='btn-rol-five-champs' onClick={rolFiveChamps}>ROL FIVE CHAMPS</button>
+      <button className='btn-rol-five-champs' onClick={clear}>CLEAR</button>
       <Champion rol={rol} champ={champ} quantity="1" />
       <Rol rol={rol} champ={champ}/>
       <div className='container-five-champs'>
