@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Champion from './components/Champion';
+import Rol from './components/Rol';
+import Champion from './components/RolChampion';
 
 const listChampsTop = ["Aatrox", "Akshan", "Camille", "Chogath", "Darius", "DrMundo", "Gangplank", "Garen", "Gnar", "Gwen", "Illaoi", "Irelia", "Jax", "Jayce", "KSante", "Kayle", "Kennen", "Kled", "Malphite", "Maokai", "Mordekaiser", "Nasus", "Nidalee", "Olaf", "Ornn", "Pantheon", "Poppy", "Quinn", "Renekton", "Riven", "Rumble", "Sett", "Shen", "Singed", "Sion", "Teemo", "Trundle", "Tryndamere", "Urgot", "Vladimir", "Volibear", "Wukong", "Yorick"];
 
@@ -14,13 +15,21 @@ const listChampsSupp = ["Alistar", "Bard", "Braum", "Janna", "Karma", "Leona", "
 
 const roles = ["Top", "Jg", "Mid", "ADC", "Supp"];
  
-
-
 function App() {
   const [rol, setRol] = useState(null);
   const [champ, setChamp] = useState(null);
+  const [champTop, setChampTop] = useState(null);
+  const [champJg, setChampJg] = useState(null);
+  const [champMid, setChampMid] = useState(null);
+  const [champADC, setChampADC] = useState(null);
+  const [champSupp, setChampSupp] = useState(null);
 
   function rolChampRandom() {
+    setChampTop(null);
+    setChampJg(null);
+    setChampMid(null);
+    setChampADC(null);
+    setChampSupp(null);
     const randomRol = roles[Math.floor(Math.random() * roles.length)];
     setRol(randomRol);
 
@@ -56,15 +65,55 @@ function App() {
     }
   }
 
+  function rolRandom(){
+    setChamp(null);
+    setChampTop(null);
+    setChampJg(null);
+    setChampMid(null);
+    setChampADC(null);
+    setChampSupp(null);
+    const randomRol = roles[Math.floor(Math.random() * roles.length)];
+    setRol(randomRol);
+
+  }
+
+  function rolFiveChamps(){
+    setChamp(null);
+    setRol(null);
+    setChampTop(listChampsTop[Math.floor(Math.random() * listChampsTop.length)])
+    setChampJg(listChampsJg[Math.floor(Math.random() * listChampsJg.length)])
+    setChampMid(listChampsMid[Math.floor(Math.random() * listChampsMid.length)])
+    setChampADC(listChampsADC[Math.floor(Math.random() * listChampsADC.length)])
+    setChampSupp(listChampsSupp[Math.floor(Math.random() * listChampsSupp.length)])
+  }
 
   return (
     <div className="App">
       <h1>ROL-CHAMPION RANDOM</h1>
-      <button onClick={rolChampRandom}>RANDOM</button>
-      <Champion rol={rol} champ={champ} />
+      <button className='btn-rol-champ' onClick={rolChampRandom}>ROL-CHAMP</button>
+      <button className='btn-rol' onClick={rolRandom}>ROL</button>
+      <button className='btn-rol-five-champs' onClick={rolFiveChamps}>ROL FIVE CHAMPS</button>
+      <Champion rol={rol} champ={champ} quantity="1" />
+      <Rol rol={rol} champ={champ}/>
+      <div className='container-five-champs'>
+        <div>
+          <Champion rol="Top" champ={champTop} quantity="5" />
+        </div>
+        <div>
+          <Champion rol="Jg" champ={champJg} quantity="5" />
+        </div>
+        <div>
+          <Champion rol="Mid" champ={champMid} quantity="5" />
+        </div>
+        <div>
+          <Champion rol="ADC" champ={champADC} quantity="5" />
+        </div>
+        <div>
+          <Champion rol="Supp" champ={champSupp} quantity="5" />
+        </div>
+      </div>
     </div>
   );
 }
-
 
 export default App;

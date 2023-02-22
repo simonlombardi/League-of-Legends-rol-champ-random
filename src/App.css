@@ -19,11 +19,13 @@ body{
 }
 
 button{
+  width: 350px;
   font-size: 22px;
   font-weight: bold;
   background-color: #F2E857;
   color:black;
   cursor: pointer;
+  margin: 5px;
 }
 
 button:hover{
@@ -31,13 +33,13 @@ button:hover{
   background-color:black;
 }
 
-.champion-img{
+.img-champion{
   width: 450px;
   height: 450px;
 }
 
 img:hover{
-  transform: scale(1.4);
+  transform: scale(1.18);
   transition: all 1s;
 }
 
@@ -53,4 +55,17 @@ h1{
 .champ{
   color:#F2E857;
   font-size: 40px;
+  font-weight: bold;
+}
+
+.container-five-champs{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.img-five-champs{
+  width: 300px;
+  height: 300px;
 }
