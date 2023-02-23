@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/League-of-Legends-rol-champ-random/static/css/main.68ce05ab.css",
+    "main.css": "/League-of-Legends-rol-champ-random/static/css/main.0e16c57c.css",
     "main.js": "/League-of-Legends-rol-champ-random/static/js/main.449cfafc.js",
     "static/js/787.c21bded3.chunk.js": "/League-of-Legends-rol-champ-random/static/js/787.c21bded3.chunk.js",
+    "static/media/627080.png": "/League-of-Legends-rol-champ-random/static/media/627080.463c81fee83524d85355.png",
     "static/media/Friz Quadrata Regular.ttf": "/League-of-Legends-rol-champ-random/static/media/Friz Quadrata Regular.b7f0a4bc1da48c89dcf5.ttf",
     "index.html": "/League-of-Legends-rol-champ-random/index.html",
-    "main.68ce05ab.css.map": "/League-of-Legends-rol-champ-random/static/css/main.68ce05ab.css.map",
+    "main.0e16c57c.css.map": "/League-of-Legends-rol-champ-random/static/css/main.0e16c57c.css.map",
     "main.449cfafc.js.map": "/League-of-Legends-rol-champ-random/static/js/main.449cfafc.js.map",
     "787.c21bded3.chunk.js.map": "/League-of-Legends-rol-champ-random/static/js/787.c21bded3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68ce05ab.css",
+    "static/css/main.0e16c57c.css",
     "static/js/main.449cfafc.js"
   ]
 }
