@@ -69,3 +69,18 @@ h1{
   width: 300px;
   height: 300px;
 }
+
+
+@media screen and (max-width: 780px) {
+  body{
+    background-image: url("./img/627080.png");
+  }
+  .img-champion{
+    width: 300px;
+    height: 300px;
+  }
+  .container-five-champs {
+  flex-direction: column;
+  gap: 0;
+  }
+}
