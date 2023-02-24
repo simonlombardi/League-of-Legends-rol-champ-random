@@ -2,23 +2,20 @@ import { useState } from 'react';
 import './App.css';
 import Rol from './components/Rol';
 import Champion from './components/RolChampion';
+import Team from './components/Team';
 
 const utils = require('./helper/utils.js');
- 
+
 function App() {
   const [rol, setRol] = useState(null);
   const [champ, setChamp] = useState(null);
-  const [champTop, setChampTop] = useState(null);
-  const [champJg, setChampJg] = useState(null);
-  const [champMid, setChampMid] = useState(null);
-  const [champADC, setChampADC] = useState(null);
-  const [champSupp, setChampSupp] = useState(null);
+  const [team, setTeam] = useState(null);
 
   function rolChampRandom() {
     clear();
     const randomRol = utils.selectRandomRol();
     setRol(utils.capitalize(randomRol));
-    setChamp(utils.selectChamp(randomRol))
+    setChamp(utils.selectRandomChamp(randomRol))
   }
 
   function rolRandom(){
@@ -29,21 +26,19 @@ function App() {
 
   function rolFiveChamps(){
     clear();
-    setChampTop(utils.selectChamp("top"))
-    setChampJg(utils.selectChamp("jungler"))
-    setChampMid(utils.selectChamp("mid"))
-    setChampADC(utils.selectChamp("adc"))
-    setChampSupp(utils.selectChamp("support"))
+    setTeam({
+      top: utils.selectRandomChamp("top"),
+      jungler: utils.selectRandomChamp("jungler"),
+      mid: utils.selectRandomChamp("mid"),
+      adc: utils.selectRandomChamp("adc"),
+      support: utils.selectRandomChamp("support")
+    });
   }
 
   function clear(){
     setRol(null);
     setChamp(null);
-    setChampTop(null);
-    setChampJg(null);
-    setChampMid(null);
-    setChampADC(null);
-    setChampSupp(null);
+    setTeam(null);
   }
 
   return (
@@ -55,23 +50,7 @@ function App() {
       <button className='btn-rol-five-champs' onClick={clear}>CLEAR</button>
       <Champion rol={rol} champ={champ} quantity="1" />
       <Rol rol={rol} champ={champ}/>
-      <div className='container-five-champs'>
-        <div>
-          <Champion rol="Top" champ={champTop} quantity="5" />
-        </div>
-        <div>
-          <Champion rol="Jg" champ={champJg} quantity="5" />
-        </div>
-        <div>
-          <Champion rol="Mid" champ={champMid} quantity="5" />
-        </div>
-        <div>
-          <Champion rol="ADC" champ={champADC} quantity="5" />
-        </div>
-        <div>
-          <Champion rol="Supp" champ={champSupp} quantity="5" />
-        </div>
-      </div>
+      { team!=null && <Team champions={team}/>}
     </div>
   );
 }

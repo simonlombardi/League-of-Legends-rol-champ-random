@@ -12,7 +12,7 @@ function selectRandomRol(){
   return roles[Math.floor(Math.random() * roles.length)];
 }
 
-function selectChamp(roles) {
+function selectRandomChamp(roles) {
   return Champs[roles][Math.floor(Math.random() * Champs[roles].length)];
 }
 
@@ -24,6 +24,6 @@ module.exports = {
   roles,
   Champs,
   selectRandomRol,
-  selectChamp,
+  selectRandomChamp,
   capitalize
 };
