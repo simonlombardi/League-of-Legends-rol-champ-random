@@ -10,18 +10,21 @@ function App() {
   const [rol, setRol] = useState(null);
   const [champ, setChamp] = useState(null);
   const [team, setTeam] = useState(null);
+  const [clearState, setClearState] = useState(false);
 
   function rolChampRandom() {
     clear();
     const randomRol = utils.selectRandomRol();
     setRol(utils.capitalize(randomRol));
     setChamp(utils.selectRandomChamp(randomRol))
+    setClearState(true);
   }
 
   function rolRandom(){
     clear();
     const randomRol = utils.selectRandomRol();
     setRol(utils.capitalize(randomRol));
+    setClearState(true);
   }
 
   function rolFiveChamps(){
@@ -33,24 +36,28 @@ function App() {
       adc: utils.selectRandomChamp("adc"),
       support: utils.selectRandomChamp("support")
     });
+    setClearState(true);
   }
 
   function clear(){
     setRol(null);
     setChamp(null);
     setTeam(null);
+    setClearState(false);
   }
 
   return (
     <div className="App">
       <h1>ROL-CHAMPION RANDOM</h1>
-      <button className='btn-rol-champ' onClick={rolChampRandom}>ROL-CHAMP</button>
-      <button className='btn-rol' onClick={rolRandom}>ROL</button>
-      <button className='btn-rol-five-champs' onClick={rolFiveChamps}>ROL FIVE CHAMPS</button>
-      <button className='btn-rol-five-champs' onClick={clear}>CLEAR</button>
+      <div className='btn-container'>
+        <div className='btn' onClick={rolChampRandom}>SINGLE ROL CHAMP</div>
+        <div className='btn' onClick={rolFiveChamps}>FIVE ROL CHAMPS</div>
+        <div className='btn' onClick={rolRandom}>SINGLE ROL</div>
+      </div>
       <Champion rol={rol} champ={champ} quantity="1" />
       <Rol rol={rol} champ={champ}/>
       { team!= null && <Team champions={team}/> }
+      <div className={clearState ? "btn" : "btn-clear-disabled"} onClick={clear}>CLEAR</div>
     </div>
   );
 }
