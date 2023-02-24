@@ -50,7 +50,7 @@ function App() {
       <button className='btn-rol-five-champs' onClick={clear}>CLEAR</button>
       <Champion rol={rol} champ={champ} quantity="1" />
       <Rol rol={rol} champ={champ}/>
-      { team!=null && <Team champions={team}/>}
+      { team!= null && <Team champions={team}/> }
     </div>
   );
 }
