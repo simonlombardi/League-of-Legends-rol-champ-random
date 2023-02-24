@@ -3,9 +3,13 @@
   src: url("./fonts/Friz\ Quadrata\ Regular.ttf");
 }
 
+*{
+  padding: 0;
+}
+
 body{
-  background-image: url("https://images8.alphacoders.com/627/627080.png");
   font-family: "Lol fuente", sans-serif;
+  background-color: #142021;
 }
 
 .App {
@@ -17,25 +21,57 @@ body{
   margin-top: 0;
   
 }
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
-button{
-  width: 350px;
-  font-size: 22px;
-  font-weight: bold;
-  background-color: #F2E857;
-  color:black;
+.btn{
+  width: 180px;
+  margin: 0 0 10px 0;
+  position: relative;
+  padding: 10px 25px;
+  border-top: solid 1px rgba(255,255,255,0.2);
+  border-bottom: solid 1px rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  color: #AEEDD7;
+  letter-spacing: 1px;
+  overflow:hidden;
   cursor: pointer;
-  margin: 5px;
 }
 
-button:hover{
-  color: #F2E857;
-  background-color:black;
+.btn::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: #259990;
+  left: 0;
+  transform: translateX(-40px) rotate(45deg);
+  border: none 3px #194846;
+  box-shadow: 2px -2px 0px #1A5754;
+  transition: all 0.2s ease;
 }
+
+.btn:hover{
+  background: linear-gradient(to right, #183F3E, TRANSPARENT);
+}
+
+.btn:hover::before{
+  transform: translateX(-15px) rotate(45deg);
+}
+
+.btn-clear-disabled{
+  display: none;
+}
+
 
 .img-champion{
   width: 450px;
   height: 450px;
+  border-top: solid 1px rgba(255,255,255,0.2);
+  border-bottom: solid 1px rgba(255,255,255,0.2);
 }
 
 img:hover{
@@ -44,16 +80,16 @@ img:hover{
 }
 
 h1{
-  color: #F2E857;
+  color: #0AC8B9;
 }
 
 .rol{
-  color:#F2AE2E;
+  color:#0397AB;
   font-size: 44px;
 }
 
 .champ{
-  color:#F2E857;
+  color: #005A82;
   font-size: 40px;
   font-weight: bold;
 }
@@ -66,14 +102,16 @@ h1{
 }
 
 .img-five-champs{
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
+  border-top: solid 1px rgba(255,255,255,0.2);
+  border-bottom: solid 1px rgba(255,255,255,0.2);
 }
 
 
 @media screen and (max-width: 780px) {
   body{
-    background-image: url("./img/627080.png");
+    background-color: #142021;
   }
   .img-champion{
     width: 300px;
@@ -82,5 +120,29 @@ h1{
   .container-five-champs {
   flex-direction: column;
   gap: 0;
+  }
+  .btn-container{
+    flex-direction: column;
+  }
+}
+
+@media screen and ( 781px <= width <= 1326px) {
+  body{
+    background-color: #142021;
+  }
+  .rol{
+    font-size: 32px;
+  }
+  .img-champion{
+    width: 300px;
+    height: 300px;
+  }
+  .img-five-champs{
+    width: 200px;
+    height: 200px;
+  }
+  .container-five-champs {
+  gap: 0;
+
   }
 }
