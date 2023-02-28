@@ -54,6 +54,9 @@ body{
   transition: all 0.2s ease;
 }
 
+
+
+
 .btn:hover{
   background: linear-gradient(to right, #183F3E, TRANSPARENT);
 }
