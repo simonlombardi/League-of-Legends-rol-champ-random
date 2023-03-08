@@ -1,6 +1,6 @@
 {
-  "short_name": "Rol-Champ Randon",
-  "name": "Rol-Champ Randon",
+  "short_name": "Rol-Champ Random",
+  "mame": "Rol-Champ Random",
   "icons": [
     {
       "src": "favicon.ico",
